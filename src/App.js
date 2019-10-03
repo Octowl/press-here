@@ -12,7 +12,7 @@ function App({ length, duplicate, done }) {
   };
 
   return (
-    <>
+    <div style={{touchAction: "manipulation"}}>
       {done && (
         <div className="text-center">
           <button
@@ -33,7 +33,7 @@ function App({ length, duplicate, done }) {
           <p>{text()}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
