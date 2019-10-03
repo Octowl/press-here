@@ -42,7 +42,7 @@ const Button = ({
     if (!draggable) return addButton();
   };
 
-  const ButtonLing = () => (
+  const Buttonling = () => (
     <div className="col-12">
       <button
         className="m-3"
@@ -50,6 +50,7 @@ const Button = ({
         onClick={handleClick}
         onDragStart={e => e.dataTransfer.setDragImage(ghostyGhost, 0, 0)}
         onDragEnd={changeColor}
+        onTouchMove={draggable ? changeColor : () => {}}
         style={{
           height: "10vh",
           width: "10vh",
@@ -63,9 +64,9 @@ const Button = ({
   return (
     <div className="col-4 my-auto">
       {counter < 5 ? (
-        <ButtonLing />
+        <Buttonling />
       ) : (
-        Array.from({ length: 5 }, (_, i) => <ButtonLing key={`${id}-${i}`} />)
+        Array.from({ length: 5 }, (_, i) => <Buttonling key={`${id}-${i}`} />)
       )}
     </div>
   );
