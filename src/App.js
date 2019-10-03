@@ -39,8 +39,8 @@ function App({ length, duplicate, done }) {
 
 const mapStateToProps = state => ({
     length: state.counter,
-    duplicate: state.colors === 2,
-    done: state.duplicates === 15
+    duplicate: state.colors >= 2,
+    done: state.duplicates >= 15
   });
 
 export default connect(mapStateToProps)(App);
